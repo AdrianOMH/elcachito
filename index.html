@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complejo Deportivo EL Cachito</title>
+    <link rel="shortcut icon" href="img/favicon.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <a href="#inicio">
+            <img src="img/logo_cachito.png" title="Inicio" alt="Logotipo del Complejo Deportivo Cachito">
+        </a>
+        <nav class="nav">
+            <a href="#servicios">Servicios</a>
+            <a href="#instalaciones">Instalaciones</a>
+            <a href="#horarios">Horarios</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <section id="inicio">
+        <img src="img/cachito_img3.jpg" alt="Cancha de césped y montañas">
+        <div class="contenido_hero">
+            <h1>Complejo Deportivo El Cachito</h1>
+            <p>Deporte, diversión y amistad</p>
+            <a href="#contacto" class="btn-reserva">Reserva ahora</a>
+        </div>
+    </section>
+
+    <section id="servicios">
+        <h2>Servicios</h2>
+        <ul class="lista_servicios">
+            <li>
+                <div class="icono-circulo">01</div>
+                <h3>Fútbol 7</h3>
+                <p>Canchas de césped sintético de primera con iluminación ideal para tus partidos nocturnos.</p>
+            </li>
+            <li>
+                <div class="icono-circulo">02</div>
+                <h3>Ecuavóley</h3>
+                <p>Espacios perfectos para disfrutar y apostar un buen partido con amigos.</p>
+            </li>
+            <li>
+                <div class="icono-circulo">03</div>
+                <h3>Mesas de Billar</h3>
+                <p>Mesas en excelente estado dentro de un ambiente relajado para jugar, conversar y compartir.</p>
+            </li>
+            <li>
+                <div class="icono-circulo">04</div>
+                <h3>Karaoke</h3>
+                <p>Un espacio diseñado para soltar la voz, disfrutar de buena música y compartir momentos inolvidables.</p>
+            </li>
+        </ul>
+        <p class="nota-servicios">Todo en un ambiente familiar, seguro y lleno de diversión</p>
+    </section>
+
+    <section class="titulo_galeria" id="instalaciones">
+        <h2>Instalaciones</h2>
+        <div class="carrusel-contenedor">
+            <button id="btn_ant" class="btn-carrusel">❮</button>
+            <div class="carrusel">
+                <div class="galeria">
+                    <img src="img/cachito_img1.jpg" alt="Mesas de billar en interior">
+                    <img src="img/cachito_img2.jpg" alt="Cancha de césped exterior">
+                    <img src="img/cachito_img11.jpeg" alt="Instalaciones desde el exterior">            
+                    <img src="img/cachito_img4.jpg" alt="Área de mesas y restaurante">
+                    <img src="img/cachito_img5.jpg" alt="Bar iluminado con luz azul">
+                    <img src="img/cachito_img6.jpg" alt="Mesa de billar con luz nocturna">
+                    <img src="img/cachito_img7.jpg" alt="Mesa de billar y tacos en la pared">
+                    <img src="img/cachito_img8.jpg" alt="Área de parrilla y descanso">
+                    <img src="img/cachito_img9.jpg" alt="Cancha iluminada de noche">
+                    <img src="img/cachito_img10.jpg" alt="Vista panorámica de la cancha">
+                    <img src="img/cachito_img12.jpeg" alt="Interior de un bar con barra, mesas y billar.">
+                    <img src="img/cachito_img13.jpeg" alt="Vista panorámica nocturna de un campo de fútbol de césped sintético.">
+                    <img src="img/cachito_img14.jpeg" alt="Área de bar o cocina con estanterías y equipos.">
+                    <img src="img/cachito_img15.jpeg" alt="Vista interior de un salón de eventos con mesas preparadas.">
+                    <img src="img/cachito_img16.jpeg" alt="Salón de eventos con mesas largas, globos azules y televisor.">
+                </div>
+            </div>
+            <button id="btn_sig" class="btn-carrusel">❯</button>
+        </div>
+    </section>
+
+    <section id="horarios">
+        <h2>Horarios y Tarifas</h2>
+        
+        <div class="split-horarios">
+            
+            <div class="contenido-izquierdo">
+                <table class="tabla-horario">
+                    <thead>
+                        <tr>
+                            <th>Día</th>
+                            <th>Horario</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Lunes-Jueves</td>
+                            <td>7:00-20:00</td>
+                        </tr>
+                        <tr>
+                            <td>Viernes-Domingo</td>
+                            <td>9:00-23:00</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="nota-precios">1 dólar por persona por el uso de las instalaciones y 15 dólares para el uso de las canchas.</p>
+                <p class="nota-precios"> *Nota: las reservaciones deben hacerse con 24 horas de anticipación.</p>
+            </div>
+
+            <div class="video-container">
+                <video src="video/cachito_video.mp4" controls></video>
+            </div>
+            
+        </div>
+    </section>
+
+    <section id="contacto" class="seccion-contacto">
+        <h2>Contacto</h2>
+        <form action="#" class="formulario-contacto">
+            <div class="inputs-fila">
+                <input type="text" name="nombre" placeholder="Nombre" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="tel" name="telefono" placeholder="Teléfono" pattern="[0-9]{10}" maxlength="10" required>
+            </div>
+            <textarea name="mensaje" rows="6" placeholder="Escribe tu mensaje..."></textarea>
+            <button type="submit" class="btn-enviar">Enviar</button>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-contenido">
+            <div class="mapa-container">
+                <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.2363449564627!2d-78.71329879999999!3d-0.9786302999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d48900723762cf%3A0x1e97a04051417a3c!2sCANCHAS%20%22EL%20CACHITO%22!5e0!3m2!1ses-419!2sec!4v1778358885566!5m2!1ses-419!2sec" 
+                width="100%" height="300px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <div class="footer-info">
+                <h3>El Cachito</h3>
+                <ul>
+                    <li><b>Visítanos:</b> Av. Isinche y GRANDE, Pujilí</li>
+                    <li>
+                        <img src="img/whatsapp_logo.svg" alt="Logo de WhatsApp" class="icono-contacto"> 
+                        0960944319
+                    </li>
+                </ul>
+                <a href="https://www.tiktok.com/@cachito.hur?_r=1&_t=ZS-96ECjei75Tb" target="_blank" class="red-social">
+                    <img src="img/tiktok-svgrepo-com.svg" alt="Icono de TikTok">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
