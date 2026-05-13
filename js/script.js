@@ -48,3 +48,7 @@ btnAnt.addEventListener("click", () => {
         moverCarrusel();
     }
 });
+
+const video = document.getElementById("video1");
+
+video.volume = 0.25;
