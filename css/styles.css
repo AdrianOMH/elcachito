@@ -84,6 +84,24 @@ section {
     background-color: var(--azul-oscuro);
 }
 
+.btn_menu {
+    display: none;
+    width: 32px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.btn_menu .linea {
+    width: 100%;
+    height: 3px;
+    background-color: var(--azul-oscuro);
+    border-radius: 5px;
+    transition: all 0.3 ease;
+}
+
 /* --- HERO (INICIO) --- */
 #inicio {
     position: relative;
@@ -383,4 +401,118 @@ input, textarea {
 .red-social img {
     width: 40px;
     height: auto;
+}
+
+@media (max-width: 768px) {
+    .btn_menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .btn_menu.abierto .linea:nth-child(1) {
+        transform: translateY(8.5px) rotate(45deg);
+    }
+
+    .btn_menu.abierto .linea:nth-child(2) {
+        opacity: 0;
+    }
+
+    .btn_menu.abierto .linea:nth-child(3) {
+        transform: translateY(-8.5px) rotate(-45deg);
+    }
+
+    .nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px; /* Justo debajo de tu cabecera */
+        left: 0;
+        width: 100%;
+        background-color: var(--fondo-principal);
+        padding: 20px 0;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.6);
+    }
+
+    .nav a {
+        width: 80%;
+        margin: 0 auto 10px;
+    }
+
+    .nav.activo {
+        display: flex; 
+    }
+    
+    .carrusel {
+        padding: 0;
+    }
+
+    .carrusel-contenedor {
+        padding: 0;
+        width: 100%;
+    }
+
+    #instalaciones {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .carrusel img {
+        width: calc(100% - 40px);
+        height: 150px;
+        object-fit: cover;
+    }
+
+    /* =========================================
+       SECCIÓN HORARIOS Y VIDEO
+     ========================================= */
+    
+    .split-horarios {
+        grid-template-columns: 1fr; 
+        gap: 30px;
+        text-align: center;
+    }
+
+    .tabla-horario {
+        margin: 0 auto; 
+        width: 95%;
+    }
+
+    .video-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .video-container video {
+        max-width: 100%; 
+        width: 85vw;
+    }
+
+    /* =========================================
+       FOOTER
+     ========================================= */
+     
+    .footer-contenido {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    } 
+
+    .footer-info {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .footer-info h3 {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .footer-info li {
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+
 }

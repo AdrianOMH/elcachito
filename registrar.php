@@ -17,7 +17,7 @@ $mensaje = trim($_POST["mensaje"] ?? "");
     exit();
  }
 
- if (filter_var($email, FILTER_VALIDATE_EMAIL)){
+ if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
     header("Location: index.html?status=error#contacto");
     exit();
  }

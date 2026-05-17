@@ -14,10 +14,17 @@ for (let i = 0; i < visibles; i++) {
     carrusel.appendChild(clon);
 }
 
+function obtenerPaso(){
+    const anchoImagen = imagenes[0].getBoundingClientRect().width;
+    const gap = 20;
+    return anchoImagen + gap;
+}
+
 function moverCarrusel() {
     enTransicion = true;
+    const pasoActual = obtenerPaso();
     carrusel.style.transition = "transform 0.5s ease-in-out";
-    carrusel.style.transform = `translateX(-${indice * paso}px)`;
+    carrusel.style.transform = `translateX(-${indice * pasoActual}px)`;
 }
 
 btnSig.addEventListener("click", () => {
@@ -29,10 +36,10 @@ btnSig.addEventListener("click", () => {
 btnAnt.addEventListener("click", () => {
     if (enTransicion) return;
     if (indice <= 0) {
-        // Salto instantáneo al clon del final antes de retroceder
+        const pasoActual = obtenerPaso();
         carrusel.style.transition = "none";
         indice = imagenes.length;
-        carrusel.style.transform = `translateX(-${indice * paso}px) `;
+        carrusel.style.transform = `translateX(-${indice * pasoActual}px) `;
         
         setTimeout(() => {
             indice--;
@@ -47,9 +54,8 @@ btnAnt.addEventListener("click", () => {
 carrusel.addEventListener("transitionend", ()=>{
     enTransicion = false;
 
-    // Si llegamos al clon, esperamos a que termine la animación y saltamos al inicio
     if (indice === imagenes.length) {
-        carrusel.style.transition = "none"; // Quitamos la animación para el salto
+        carrusel.style.transition = "none";
         indice = 0;
         carrusel.style.transform = `translateX(0px)`;
     } 
@@ -58,3 +64,22 @@ carrusel.addEventListener("transitionend", ()=>{
 const video = document.getElementById("video1");
 
 video.volume = 0.25;
+
+// Seleccionamos los elementos del DOM
+const btnMenu = document.getElementById('btn_menu');
+const menu = document.getElementById('menu');
+const enlacesMenu = document.querySelectorAll('.nav a');
+
+// Evento para abrir/cerrar el menú
+btnMenu.addEventListener('click', () => {
+    menu.classList.toggle('activo');
+    btnMenu.classList.toggle('abierto'); // <-- ¡AÑADE ESTO AQUÍ!
+});
+
+// Evento para cerrar el menú al hacer clic en un enlace
+enlacesMenu.forEach(enlace => {
+    enlace.addEventListener('click', () => {
+        menu.classList.remove('activo');
+        btnMenu.classList.remove('abierto'); // <-- ¡Y AÑADE ESTO AQUÍ!
+    });
+});
