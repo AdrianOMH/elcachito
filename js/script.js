@@ -4,7 +4,6 @@ const btnSig = document.getElementById("btn_sig");
 const btnAnt = document.getElementById("btn_ant");
 
 let indice = 0;
-const paso = 620; // Los 600px de ancho + 20px de gap
 const visibles = 3; // Cuántas fotos se ven a la vez
 let enTransicion = false;
 
@@ -65,21 +64,18 @@ const video = document.getElementById("video1");
 
 video.volume = 0.25;
 
-// Seleccionamos los elementos del DOM
 const btnMenu = document.getElementById('btn_menu');
 const menu = document.getElementById('menu');
 const enlacesMenu = document.querySelectorAll('.nav a');
 
-// Evento para abrir/cerrar el menú
 btnMenu.addEventListener('click', () => {
     menu.classList.toggle('activo');
-    btnMenu.classList.toggle('abierto'); // <-- ¡AÑADE ESTO AQUÍ!
+    btnMenu.classList.toggle('abierto');
 });
 
-// Evento para cerrar el menú al hacer clic en un enlace
 enlacesMenu.forEach(enlace => {
     enlace.addEventListener('click', () => {
         menu.classList.remove('activo');
-        btnMenu.classList.remove('abierto'); // <-- ¡Y AÑADE ESTO AQUÍ!
+        btnMenu.classList.remove('abierto');
     });
 });
